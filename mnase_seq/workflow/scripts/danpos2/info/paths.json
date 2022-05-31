@@ -1,0 +1,53 @@
+{
+  "paths": [
+    {
+      "_path": "bin/danpos.py",
+      "path_type": "hardlink",
+      "sha256": "e7f1a941d886673a90e955a5108d7d0583953e116c3166983c03d4d5cc25a539",
+      "size_in_bytes": 94782
+    },
+    {
+      "_path": "bin/functions.py",
+      "path_type": "hardlink",
+      "sha256": "99c385a89dcfc3462d646ac5ce24db066d997eb2ef4e8e64a27fad02347a4ba3",
+      "size_in_bytes": 82286
+    },
+    {
+      "_path": "bin/lib.py",
+      "path_type": "hardlink",
+      "sha256": "c638c4cc056094ec50a877667cb5fcbbf87af049817a81b9586458aa1e3bdc58",
+      "size_in_bytes": 86935
+    },
+    {
+      "_path": "bin/reads.py",
+      "path_type": "hardlink",
+      "sha256": "f2d8ac48c9161c820a36fc8406835a2f4c81cf76301108ec45806096824a8b40",
+      "size_in_bytes": 37114
+    },
+    {
+      "_path": "bin/summits.py",
+      "path_type": "hardlink",
+      "sha256": "e0f15265301a5efdc1e5d150d2665f7df2a426f003866143ab84c53c103dac5a",
+      "size_in_bytes": 7628
+    },
+    {
+      "_path": "bin/wig.py",
+      "path_type": "hardlink",
+      "sha256": "f484631465a6fdf2e065df2c4a2077de0a80407b36fbf79c5794d46a32c909c1",
+      "size_in_bytes": 64677
+    },
+    {
+      "_path": "bin/wigs.py",
+      "path_type": "hardlink",
+      "sha256": "4082d36dbf167ef3b41e69421b873df51478cf463305c246e7e7fbff58fb4c39",
+      "size_in_bytes": 16236
+    },
+    {
+      "_path": "bin/wiq.py",
+      "path_type": "hardlink",
+      "sha256": "1845d6013cff484980a17c352dca4f163d504ab4927b885d5a51f2c33b5d865f",
+      "size_in_bytes": 12897
+    }
+  ],
+  "paths_version": 1
+}

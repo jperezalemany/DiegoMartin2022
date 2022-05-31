@@ -1,0 +1,20 @@
+{
+  "arch": null,
+  "build": "hdfd78af_2",
+  "build_number": 2,
+  "depends": [
+    "icu",
+    "numpy",
+    "python <3",
+    "r-base",
+    "rpy2",
+    "samtools <1"
+  ],
+  "license": "Unknown",
+  "name": "danpos",
+  "noarch": "generic",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1616779980535,
+  "version": "2.2.2"
+}

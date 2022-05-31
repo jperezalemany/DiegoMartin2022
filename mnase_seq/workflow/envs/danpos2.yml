@@ -1,0 +1,6 @@
+channels:
+  - bioconda
+  - conda-forge
+
+dependencies:
+  - danpos=2.2.2

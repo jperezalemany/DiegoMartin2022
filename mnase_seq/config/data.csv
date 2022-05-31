@@ -1,0 +1,7 @@
+name,condition,replicate,control,read1,read2
+col0_rep1,col0,1,,col0_rep1_1,col0_rep1_2
+col0_rep2,col0,2,,col0_rep2_1,col0_rep2_2
+minu_rep1,minu,1,col0,minu_rep1_1,minu_rep1_2
+minu_rep2,minu,2,col0,minu_rep2_1,minu_rep2_2
+tpf_rep1,tpf,1,col0,tpf_rep1_1,tpf_rep1_2
+tpf_rep2,tpf,2,col0,tpf_rep2_1,tpf_rep2_2

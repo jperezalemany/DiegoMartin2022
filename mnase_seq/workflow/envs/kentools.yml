@@ -1,0 +1,9 @@
+channels:
+  - bioconda
+  - conda-forge
+
+dependencies:
+  - ucsc-bedgraphtobigwig
+  - ucsc-bigwigtowig
+  - ucsc-wigtobigwig
+  - ucsc-bigwigtobedgraph

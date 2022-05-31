@@ -1,0 +1,19 @@
+reference:
+  genome_url: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/735/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.fna.gz
+  genome_name: TAIR10
+  genome_alias: "config/alias.csv"
+  annotation_url: https://www.arabidopsis.org/download_files/Genes/Araport11_genome_release/archived/Araport11_GTF_genes_transposons.Mar202021.gtf.gz
+  annotation_name: Araport11
+
+bowtie2_align:
+  options: ""
+
+samtools_view_filter:
+  flags: "-F 1024 -F 4 -q 5 -f 2"
+
+blacklist:
+  regions: ""
+  chroms: "ChrC ChrM"
+
+nucleosome:
+  max_plus_one_distance: 1500

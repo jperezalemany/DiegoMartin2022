@@ -1,0 +1,54 @@
+import pandas as pd
+
+configfile: "config/config.yml"
+
+SAMPLES = pd.read_csv("config/data.csv")
+DESIGN = pd.read_csv("config/design.csv")
+
+include: "rules/qc.smk"
+include: "rules/align.smk"
+include: "rules/clean.smk"
+include: "rules/lists.smk"
+include: "rules/process_danpos.smk"
+include: "rules/counts.smk"
+
+rule all:
+    input:
+        expand("results/bamfiles/raw/{sample}.markdup.bam.bai", sample=SAMPLES.name),
+        expand(
+            "results/bamfiles/clean/single/{sample}.clean.bam.bai",
+            sample=SAMPLES.condition + "/" + SAMPLES.name
+        ),
+        expand(
+            "results/qc/samtools_stats/{sample}.clean.txt",
+            sample=SAMPLES.name
+        ),
+        expand(
+            "results/qc/chipseq_greylist/{control}.merged_annotated_greylist.bed", 
+            control=DESIGN.control
+        ),
+        expand(
+            "results/qc/included_regions/{genome}.{control}.bg",
+            genome=config["reference"]["genome_name"],
+            control=SAMPLES[SAMPLES.control.isna()].condition
+        ),
+        expand(
+            "results/danpos2_processed/plus_one/{condition}_plus_one.bed",
+            condition=SAMPLES.condition
+        ),
+        expand(
+            "results/danpos2_processed/annotation/{condition}_summits.annotation.bed",
+            condition=SAMPLES.condition
+        ),
+        expand(
+            "results/danpos2_processed/diff/{contrast}.{analysis}.csv",
+            contrast=DESIGN.treatment + "_vs_" + DESIGN.control,
+            analysis=["fuzziness", "occupancy", "shift", "dynamism"]
+        ),
+        expand(
+            "results/danpos2_processed/diff/{treatments}.integrated_{analysis}.csv",
+            treatments="_".join(DESIGN.treatment),
+            analysis=["fuzziness", "occupancy", "shift", "dynamism"]
+        ),
+        expand("results/danpos2_processed/plus_one/{control}_plus_one.bed", control=DESIGN.control),
+        expand("results/danpos2_processed/nucs/{condition}_nucs.bed", condition=SAMPLES.condition)

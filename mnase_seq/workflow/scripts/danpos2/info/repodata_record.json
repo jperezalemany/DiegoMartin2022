@@ -1,0 +1,28 @@
+{
+  "build": "hdfd78af_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/bioconda/noarch",
+  "constrains": [],
+  "depends": [
+    "icu",
+    "numpy",
+    "python <3",
+    "r-base",
+    "rpy2",
+    "samtools <1"
+  ],
+  "features": "",
+  "fn": "danpos-2.2.2-hdfd78af_2.tar.bz2",
+  "license": "Unknown",
+  "md5": "18dc42d517a6c0ae744a162ae7e0eca5",
+  "name": "danpos",
+  "noarch": "generic",
+  "package_type": "noarch_generic",
+  "sha256": "a495419722c506ff62830f3cc39594cee9f6b10063d29acf4fc4f31936858b18",
+  "size": 66965,
+  "subdir": "noarch",
+  "timestamp": 1616779980535,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/bioconda/noarch/danpos-2.2.2-hdfd78af_2.tar.bz2",
+  "version": "2.2.2"
+}
