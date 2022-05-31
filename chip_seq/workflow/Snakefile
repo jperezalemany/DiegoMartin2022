@@ -1,0 +1,33 @@
+
+import pandas as pd 
+
+SAMPLES = pd.read_csv("config/data.csv")
+CHIPS = pd.read_csv("config/chip.csv")
+
+configfile: "config/config.yml"
+
+include: "rules/qc.smk"
+include: "rules/align.smk"
+include: "rules/clean.smk"
+include: "rules/lists.smk"
+include: "rules/peaks.smk"
+include: "rules/peak_analysis.smk"
+include: "rules/counts.smk"
+
+rule all:
+    input:
+        expand("results/peak_calling/single/{chip_sample}_peaks.narrowPeak",
+            chip_sample=CHIPS.name
+        ),
+        expand(
+            ["results/peak_calling/pooled/{antibody}_pooled_peaks.narrowPeak",
+            "results/peak_calling/pooled/{antibody}_pooled_summits.bed"],
+            antibody=CHIPS.antibody
+        ),
+        expand(
+            "results/counts/{antibody}.csv", antibody=CHIPS.antibody
+        ),
+        expand(
+            "results/peak_analysis/targets/{antibody}.targets.bed",
+            antibody=CHIPS.antibody
+        )

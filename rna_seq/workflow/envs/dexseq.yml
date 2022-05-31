@@ -1,0 +1,8 @@
+channels:
+  - bioconda
+  - conda-forge
+
+dependencies:
+  - bioconductor-dexseq=1.38
+  - htseq=2.0.1
+  - pysam

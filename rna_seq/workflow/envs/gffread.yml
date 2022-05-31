@@ -1,0 +1,6 @@
+channels:
+  - bioconda
+  - conda-forge
+
+dependencies:
+  - gffread=0.11

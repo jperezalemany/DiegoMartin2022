@@ -1,0 +1,53 @@
+fastq_dir: fastq
+sample_sheet: config/data.csv
+merge_technical_reps:
+  skip: True
+
+fastqc:
+  skip: False
+
+cutadapt_trim:
+  skip: True
+  adapter:
+    R1: AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+    R2: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+  extra: -q 15,10 -m 10
+
+hisat2_align:
+  skip: False
+  reference: ../araport11/sequence/genome.fasta
+  index: ../araport11/hisat2_index/hisat2_index
+
+salmon_quant:
+  skip: True
+  genome: ../araport11/sequence/genome.fasta
+  transcriptome: ../araport11/sequence/transcripts.fasta
+  index: ../araport11/salmon_index
+  k: 21
+  libtype: A
+
+feature_counts:
+  skip: False
+  annotation: ../araport11/annotation/Araport11_new_annotation.gtf
+  feature: exon
+  attribute: gene_id
+  extra: -C -Q 10 --primary
+
+deeptools_bamcoverage:
+  skip: True
+  bin_size: 10
+  min_quality: 10
+  normalize_using: RPKM
+
+quality_control:
+  skip: True
+
+deseq2_dea:
+  skip: True
+  counts_from: alignment
+  min_count: 10
+  design: ~group
+  pvalue: 0.05
+  test_lfc: 0
+  contrasts:
+    - group_phd2_vs_Col0

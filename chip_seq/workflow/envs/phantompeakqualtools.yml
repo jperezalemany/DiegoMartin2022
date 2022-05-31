@@ -1,0 +1,6 @@
+channels:
+  - bioconda
+  - conda-forge
+
+dependencies:
+  - phantompeakqualtools=1.2.2

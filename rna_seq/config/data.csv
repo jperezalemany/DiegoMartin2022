@@ -1,0 +1,10 @@
+name,condition,replicate
+col0_rep1,col0,1
+col0_rep2,col0,2
+col0_rep3,col0,3
+chr_rep1,chr,1
+chr_rep2,chr,2
+chr_rep3,chr,3
+tpf_rep1,tpf,1
+tpf_rep2,tpf,2
+tpf_rep3,tpf,3

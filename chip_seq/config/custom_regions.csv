@@ -1,0 +1,4 @@
+region	refpoint	upstream	downstream	priority	gene_types	gene_overlap
+proximal_promoter	TSS	500	0	1	CDS	False
+terminator	TTS	0	500	1	CDS	False
+distal_promoter	TSS	2000	-500	2	CDS	False

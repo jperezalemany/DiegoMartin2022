@@ -1,0 +1,6 @@
+channels:
+  - bioconda
+  - conda-forge
+
+dependencies:
+  - chipseq-greylist=1.0.2

@@ -1,0 +1,35 @@
+import pandas as pd
+from os import path, listdir
+
+configfile: "config/config.yml"
+
+SAMPLES = pd.read_csv("config/data.csv")
+DESIGN = pd.read_csv("config/design.csv")
+
+include: "rules/qc.smk"
+include: "rules/align.smk"
+include: "rules/count.smk"
+include: "rules/dea.smk"
+include: "rules/tracks.smk"
+
+rule all:
+    input:
+        "resources/reference/Araport11.gffread.gtf",
+        expand("results/bamfiles/raw/{sample}/Aligned.sortedByCoord.out.bam",
+            sample=SAMPLES.name
+        ),
+        expand(
+            "results/qc/samtools_stats/{stage}/{sample}.txt",
+            stage=["raw", "clean"],
+            sample=SAMPLES.name
+        ),
+        "results/deseq2/dds_featurecounts.RDS",
+        expand(
+            "results/bigwigs/pooled/merged_strands/{condition}.counts.{format}",
+            condition=SAMPLES.condition, format=["bw", "bg.gz", "bg.gz.tbi"]
+        ),
+        expand(
+            "results/bigwigs/pooled/log2ratio/{contrast}.log2ratio.bw",
+            contrast=DESIGN.condition + "_over_" + DESIGN.control
+        )
+
